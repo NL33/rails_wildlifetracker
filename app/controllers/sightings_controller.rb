@@ -13,7 +13,6 @@ class SightingsController < ApplicationController
 
   def create
   	@sighting = Sighting.new(:date => params[:date], :specie_id => params[:specie_id])
-    
 
     if @sighting.save
       render('sightings/success.html.erb')
@@ -21,8 +20,6 @@ class SightingsController < ApplicationController
       render('sightings/new.html.erb')
     end
   end
-
-
 
 end
 

@@ -1,13 +1,3 @@
-Drop down selection:
-<form action="/<%= @sighting.id %>/regions" method="post">
-    <label for="region_name">Region</label>
-  <select id="sighting_region_id" name = 'sighting[region_id]'>
-    <% Region.all.each do |region| %>
-      <option value=<%=region.id%> > <%= region.name %> </option>
-  <button>Add Region</button>
-  <% end %>
-</form>
-
 
 NOTE: With has_many :through association for species and regions (ex, species has_many: regions, through: :sightings), the association can be accessed through code like as follows (ex: if want to list out names of the regions where a species has been sited on species index):
 

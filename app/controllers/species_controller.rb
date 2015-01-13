@@ -25,23 +25,21 @@ class SpeciesController < ApplicationController
     render('species/show.html.erb')
   end
 
-  def edit
+  def edit #NOT USED
     @specie = Specie.find(params[:id])
     render('species/edit.html.erb') 
   end
 
-  def update
+  def update #NOT USED
     @specie = specie.find(params[:id])
-    if @specie.update(:name => params[:name],
-                       :email => params[:email],
-                       :phone => params[:phone])
+    if @specie.update(params[:id])
       render('species/success.html.erb')
     else
       render('species/edit.html.erb')
     end
   end
 
- def destroy
+ def destroy #NOT USED
     @specie = specie.find(params[:id])
     @specie.destroy
     render('species/destroy.html.erb')

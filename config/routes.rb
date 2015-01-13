@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   #match('species/:id/edit', {:via => :get, :to => 'species#edit'}) #Not used. This and others included for illustration
   #match('species/:id', {:via => [:patch, :put], :to => 'species#update'}) #Not used.
   #match('species/:id', {:via => :delete, :to => 'species#destroy'}) #Not used.
+
 #Sightings
   match('/species/:specie_id/sightings/new', {:via => :get, :to => 'sightings#new'})
   match('/species/:specie_id/sightings', {:via => :post, :to => 'sightings#create'})
