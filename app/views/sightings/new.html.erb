@@ -1,0 +1,24 @@
+<h1>Add a Sighting </h1>
+
+<% if @sighting.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @sighting.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/species/<%= @sighting.specie_id %>/sightings" method="post">
+  <label for="sighting_date">Sighting Date</label>
+  <input id="sighting_date" name="date" type="text" value="<%= @sighting.date %>">
+  <button>Add Sighting</button>
+  
+  <label for="sighting_region_id">Region</label>
+  <select id="sighting_region_id" name = 'sighting[region_id]'>
+    <% Region.all.each do |region| %>
+      <option value=<%=region.id%> > <%= region.name %> </option>
+    <% end %>
+
+  <button>Add Sighting</button>
+</form>

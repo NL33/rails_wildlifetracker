@@ -1,0 +1,15 @@
+<h1>Add a Region </h1>
+
+<p1> Specie: <%= @specie.name %></p1></br
+<p1> Sighting Date: <%= @sighting.date %></p1></br>
+
+
+<form action="/<%= @sighting.id %>/regions" method="post">
+  <label for="region_name">Name</label>
+  <input id="region_name" name="name" type="text" value="<%= @region.name %>">
+  <button>Add Region</button>
+
+</form>
+
+
+

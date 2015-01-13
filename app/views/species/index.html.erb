@@ -1,0 +1,18 @@
+<h1>Wildlife Tracker: Track the Species that You See!</h1>
+
+<p> Species that have been seen (click on a specie to add a sighting): </p>
+
+<ul>
+  <% @species.each do |specie| %>
+    <li><a href="/species/<%= specie.id %>"><%= specie.name %></a></li>
+        <% specie.sightings.each do |sighting| %>
+        	<p> &nbspDate of Sighting:  &nbsp<%= sighting.date %> 
+        	<% if (sighting.region_id != nil) %>
+        	   , &nbspRegion: <%= sighting.show_region %></p>
+        	 <% end %>
+         <% end %> 
+  <% end %>
+</ul>
+
+<a href="/species/new">New specie</a>
+

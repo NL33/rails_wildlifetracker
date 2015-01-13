@@ -1,0 +1,13 @@
+<h1>Wildlife Tracker</h1>
+
+<p> Track the species that you see! </p>
+
+<ul>
+  <% @species.each do |sighting| %>
+    <li><a href="/sightings/<%= sighting.id %>"><%= sighting.specie.name %></a></li>
+    &nbsp<%= sighting.date %>
+    &nbsp<%= sighting.region.name %>
+  <% end %>
+</ul>
+
+<a href="/sightings/new">New sighting</a>

@@ -1,0 +1,1 @@
+Practice app with rails for users to report sightings of wildlife.  Users can report what species they have seen, when, and in what region.
