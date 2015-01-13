@@ -4,12 +4,23 @@
 <p1> Sighting Date: <%= @sighting.date %></p1></br>
 
 
+<h2> Select a region from one of the main regions: </h2>
+<form action="/<%= @sighting.id %>/regions" method="post">
+  <label for="region_name">Name</label>
+  <select id="region_name" name = "name">
+	<option value="NorthWest">NorthWest</option>
+	<option value="NorthEast">NorthEast</option>
+	<option value="SouthWest">SouthWest</option>
+	<option value="SouthEast">SouthEast</option>
+  </select>
+ <button>Add Region</button>
+</form></br>
+
+<h2> or enter a new region to select:</h2>
 <form action="/<%= @sighting.id %>/regions" method="post">
   <label for="region_name">Name</label>
   <input id="region_name" name="name" type="text" value="<%= @region.name %>">
   <button>Add Region</button>
-
 </form>
 
-
-
+      

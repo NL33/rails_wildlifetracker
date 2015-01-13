@@ -12,11 +12,9 @@ class SpeciesController < ApplicationController
 
   def create
   	@specie = Specie.new(params[:specie])
-    #note this is equivalent to:
-    #  @specie = specie.new(params[:specie])
 
     if @specie.save
-      render('sightings/new.html.erb')
+      render('species/success.html.erb')
     else
       render('species/new.html.erb')
     end

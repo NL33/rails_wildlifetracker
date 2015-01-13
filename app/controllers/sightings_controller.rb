@@ -22,19 +22,7 @@ class SightingsController < ApplicationController
     end
   end
 
-def edit
-  @sighting = Sighting.find(params[:id])
-  #render('contacts/edit.html.erb') 
-end
 
-def update
-    @sighting = Sighting.find(params[:id])
-    @region = Region.find(params[:id])
-    specie_id = @sighting.specie_id
-    @specie = Specie.where(:id => specie_id).first 
-    @sighting.update(:date =>params[:date], :specie_id => @specie.id, :region_id => @region.id)
-    render ('species/index.html.erb')
-end
 
 end
 

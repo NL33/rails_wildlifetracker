@@ -13,12 +13,5 @@
   <label for="sighting_date">Sighting Date</label>
   <input id="sighting_date" name="date" type="text" value="<%= @sighting.date %>">
   <button>Add Sighting</button>
-  
-  <label for="sighting_region_id">Region</label>
-  <select id="sighting_region_id" name = 'sighting[region_id]'>
-    <% Region.all.each do |region| %>
-      <option value=<%=region.id%> > <%= region.name %> </option>
-    <% end %>
 
-  <button>Add Sighting</button>
 </form>

@@ -7,3 +7,28 @@ Drop down selection:
   <button>Add Region</button>
   <% end %>
 </form>
+
+
+NOTE: With has_many :through association for species and regions (ex, species has_many: regions, through: :sightings), the association can be accessed through code like as follows (ex: if want to list out names of the regions where a species has been sited on species index):
+
+  <% @species.each do |specie| %>
+    <li><a href="/species/<%= specie.id %>"><%= specie.name %></a></li
+	<% if (specie.regions != nil) %>
+        <% specie.regions.each do |region| %>
+        	<%= region.name %></br>
+        <% end %>
+    <% end %>
+
+NOTE on selecting regions: 
+In Dropdown,If Regions are already entered and want to list what other users have entered, drop-down code:
+<form action="/<%= @sighting.id %>/regions" method="post">
+  <label for="region_name">Name</label>
+  <select id="region_name" name = "name">
+
+    <% Region.all.each do |region| %>
+      <option value=<%= region.name %> </option>
+    <% end %></select>
+ <button>Add Region</button>
+</form>
+
+

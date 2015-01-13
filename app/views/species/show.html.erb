@@ -1,3 +1,12 @@
 <h1><%= @specie.name %></h1>
-<a href="/species/<%= @specie.id %>/sightings/new">Add sighting</a>
+
+ <% @specie.sightings.each do |sighting| %>
+       <p> &nbspDate of Sighting:  &nbsp<%= sighting.date %> 
+        <% if (sighting.region_id != nil) %>
+          , &nbspRegion: <%= sighting.show_region %></p>
+        <% end %>
+ <% end %> 
+
+
+<h3><a href="/species/<%= @specie.id %>/sightings/new">Add sighting</a></h3>
 
